@@ -15,4 +15,3 @@ elif age >= 5 :
     print('어린이')
 else :
     print('영유아기')
-    
