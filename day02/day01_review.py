@@ -113,5 +113,29 @@ print(age > 20)
 
 print(name == 'alex' and age > 20) # 조건문에서 주로 사용하는 형태
 
+# 조건문
+# if 조건1:
+    # 조건1을 만족할 때 실행되는 코드블럭
+# elif 조건2:
+    # 조건1을 만족하지 않으면서, 조건 2를 만족할때 실행되는 코드블럭
+# else:
+    # 그외 모든 케이스에 대해 실행하는 블럭
 
+print('===== 조건문 =====')
+name = 'jun'
 
+print(age)
+print(money)
+
+if name == 'alex' and money > 10: # False and True -> if False와 같다.
+    print('부자 alex, 안녕하세요!')
+elif name == 'alex': # False
+    print('그냥 alex, 안녕하세요!')
+else:
+    print('누구세요?')
+    print('1번 케이스: 장난입니다~') # 1번 케이스
+
+# 조건문과 무관히 실행되는 케이스
+print('2번 케이스: 장난입니다~') # 2번 케이스
+
+# 들여쓰기에 따라, 의도와 다르게 작동할 수도 있다.
