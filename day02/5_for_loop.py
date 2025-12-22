@@ -47,3 +47,18 @@ for number in numbers:
 
 # 간단 질문
 print(number) # 정답 : 10
+
+# 인덱스 순회
+numbers = [1,2,3,4,5]
+# for i in range(numbers): 
+#     print(i)
+# TypeError: 'list' object cannot be interpreted as an integer
+
+for i in range(len(numbers)):
+    print(numbers[i])
+    
+# 실제로 같은 결과를 출력합니다.
+for num in numbers:
+    print(num)
+
+# 위치와 값을 같이 보아야 하는 경우에 인덱스 순회를 주로 사용한다.
