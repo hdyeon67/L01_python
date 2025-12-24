@@ -96,3 +96,136 @@ print(age)
 print(age == 100 and asdlkfnqlwnecoiqhwerob)
 # False and 정의되지 않은 변수
 # -> 필요이상의 연산 X, 바로 거짓 반환
+
+print('===== 조건문과 반복문 =====')
+
+# 조건문
+    # 핵심 질문 : 특정 조건이 맞는가?
+    # 실행 횟수 : 1번
+    # 판단 기준 : 논리 조건 (True, False)
+
+score = 70
+
+print('~ 조건문 시작 ~')
+if score >= 60:
+    print('합격')
+elif score >= 50:
+    print('예비합격')
+else:
+    print('불합격')
+print('~ 조건문 끝 ~')
+
+# 반복문
+    # 핵심 질문 : 몇 번 반복할 것인가?
+    # 실행 횟수 : 여러 번
+    # 판단 기준 : 데이터의 갯수(for문), 조건(while문)
+
+scores = [70, 20, 50, 90, 10]
+
+print('~ 반복문 시작 ~')
+for score in scores:
+    print(score)
+print('~ 반복문 끝 ~')
+
+# 조건문 + 반복문 => 강력한 코드
+# 조건문 = 판단, 반복문 = 처리량
+print(scores)
+for score in scores:
+    if score >= 60:
+        print('합격')
+    elif score >= 50:
+        print('예비합격')
+    else:
+        print('불합격')
+        
+# 반복문의 종류
+# 언제 무엇을 사용해야 하는가?
+
+# for문 : 반복 횟수가 정해진 반복문
+# while문 : 반복 횟수가 정해지지 않은 반복문
+
+print('== for문 ==')
+    # 사용 기준 : 반복 횟수 명확
+    # 사용처   : 컨테이너 자료형의 순회 
+    #          (리스트, 딕셔너리, 문자열, range ...)
+    # 안정성 : 높음
+
+for i in range(5):
+    print(i)
+    
+print('== while문 ==')
+    # 사용 기준 : 종료 조건 중요
+    # 사용처 : 상태 변화 추적
+    # 안정성 : 낮음 (주의!) -> 무한루프 가능성 존재
+
+number = 1
+while number < 5:
+    print(number)
+    number += 1 # 조건에 대한 증감식
+
+print('===== 컨테이너 자료형 비교 =====')
+
+# 리스트 []
+    # 핵심목적 : 여러 값을 순서대로 관리
+    # 순서 : O
+    # 수정 : O
+    # 중복 : O
+    # 접근 방식 : 인덱스 (위치기반)
+
+numbers = [1,2,3,4,5,6,6,6,6,6,6]
+print(numbers)
+print(numbers[0])
+numbers[0] = 10
+print(numbers)
+
+# 튜플 ()
+    # 핵심목적 : 변하지 않는 묶음
+    # 순서 : O
+    # 수정 : X
+    # 중복 : O
+    # 접근 방식 : 인덱스 (위치 기반)
+
+numbers = (1,2,3,3)
+print(numbers)
+
+print(numbers[0])
+# numbers[0] = 10 # TypeError
+
+# 집합 {}
+    # 핵심목적 : 중복 제거, 집합 연산
+    # 순서 : X
+    # 수정 : O
+    # 중복 : X
+    # 접근 방식 : 포함 여부 확인 가능 (멤버십 연산자)
+    
+numbers = {1,2,3,4,5}
+print(numbers)
+
+# numbers[0] # TypeError: 'set' object is not subscriptable
+
+print(1 in numbers)
+numbers.add(10000)
+numbers.add(300)
+numbers.add(6)
+print(numbers)
+
+# 딕셔너리 {}
+    # 핵심목적 : key-value 매핑하여 사용
+    # 순서 : X (단, 파이썬 3.7 이상인 경우 입력 순서 유지 경향)
+    # 수정 : O
+    # 중복 : X (key가 중복되지 않는다.)
+    # 접근방식 : key
+
+user = {'name':'jun','age':30,'is_male':True}
+
+user['city'] = 'seoul'
+user['city'] = 'busan' # 중복 불가능, 재할당
+user['license'] = True
+print(user)
+
+for k in user.keys():
+    print(user[k])
+    
+# print(user[0])  # KeyError: 0
+# 순서가 유지되는 경향이 있다고 하여, 
+# 인덱스로 접근 가능한 것은 아님
