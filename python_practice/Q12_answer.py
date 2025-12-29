@@ -25,4 +25,4 @@ for x in data:
 
 # 4. 합계 출력
 total_sum = sum(cleaned_data)
-print(total_sum)  # 180
+print(total_sum)  # 210
