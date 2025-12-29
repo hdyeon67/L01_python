@@ -19,9 +19,18 @@ orders = [
 ]
 
 # 결과 예시: [{'name': 'Alice', 'total': 200}, {'name': 'Bob', 'total': 300}, {'name': 'Charlie', 'total': 300}, {'name': 'David', 'total': 0}]
+total_by_id = {}
+for user in users:
+    total_by_id[user['id']] = 0
+print(total_by_id)
 
-# 로직 작성
+for order in orders:
+    if order['user_id'] in total_by_id:
+        total_by_id[order['user_id']] += order['amount']
+print(total_by_id)
 
-
-
-# print(user_totals)
+user_totals = []
+for user in users:
+    user_totals.append({'name':user['name'], 'total':total_by_id[user['id']]})
+    
+print(user_totals)

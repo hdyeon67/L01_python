@@ -18,7 +18,9 @@ even_sum = 0
 # for n in numbers:
 #     # n이 짝수인지 확인
 #     # 짝수라면 sum에 누적
-# TODO
+for num in numbers:
+    if num % 2 == 0:
+        even_sum += num
 
 # [Step 5] 출력
-# TODO
+print(even_sum)

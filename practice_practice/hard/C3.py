@@ -15,7 +15,24 @@ logs = [
 # 결과 예시: {'Seoul': {'Electronics': 300, 'Food': 30}, 'Busan': {...}, ...}
 
 # 로직 작성
-
-
-
-# print(agg_result)
+agg_result = {}
+for log in logs:
+    region = log['region']
+    category = log['category']
+    sales = log['sales']
+    print(region)
+    print(category)
+    print(sales)
+    
+    print(agg_result)
+    if region not in agg_result:
+        agg_result[region] = {}
+        
+    print(agg_result)
+    if category not in agg_result[region]:
+        agg_result[region][category] = 0
+        
+    print(agg_result)
+    agg_result[region][category] += sales
+        
+print(agg_result)

@@ -18,7 +18,9 @@ max_score = scores[0]
 # for s in scores:
 #     # s가 max_score보다 큰지 확인하는 조건문을 작성하세요.
 #     # 크다면 max_score를 s로 업데이트하세요.
-# TODO: 여기에 코드를 작성하세요.
+for score in scores[2:]:
+    if max_score < score:
+        max_score = score
 
 # [Step 3] 최종 최대값을 출력합니다.
-# TODO
+print(max_score)

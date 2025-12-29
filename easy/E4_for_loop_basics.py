@@ -15,7 +15,8 @@ total = 0
 # [Step 2] for 문을 사용하여 각 숫자를 더하세요.
 # for num in numbers:
 #     # 여기에 total에 num을 더하는 코드를 작성하세요.
-# TODO
+for item in numbers:
+    total += item
 
 # [Step 3] 결과를 출력하세요.
-# TODO
+print(total)

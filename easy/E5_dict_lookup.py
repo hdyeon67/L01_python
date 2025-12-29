@@ -15,13 +15,16 @@ student = {
 
 # ---------------------------------------------------------
 # [Step 1] 이름을 출력하세요.
-# TODO
+print(f'이름: {student["name"]}')
 
 # [Step 2] 나이를 21로 수정하세요.
-# TODO
+print(f'나이: {student["age"]}')
+student["age"] = 21
+print(f'나이: {student["age"]}')
 
 # [Step 3] "grade" 키와 "A" 값을 추가하세요.
-# TODO
+student["grade"] = 'A'
+print(f'성적: {student["grade"]}')
 
 # [Step 4] 전체 출력
-# TODO
+print(student)

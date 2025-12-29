@@ -10,8 +10,24 @@ data = [10, 12, 11, 13, 9, 10, 100, 11, 12, 8, 10, 110, 9, 10]
 
 # 로직 작성
 # 1. 평균 계산
-# 2. 표준편차 계산
-# 3. (평균 - 2*표준편차) ~ (평균 + 2*표준편차) 범위를 벗어나면 이상치
+avg = sum(data)/len(data)
+print(int(avg))
 
-# print("정상 데이터:", cleaned_data)
-# print("이상치:", outliers)
+# 2. 표준편차 계산
+variance = sum((x - avg)**2 for x in data) / len(data)
+std_dev = math.sqrt(variance)
+
+
+# 3. (평균 - 2*표준편차) ~ (평균 + 2*표준편차) 범위를 벗어나면 이상치
+lower_bound = avg - 2 * std_dev
+higher_bound = avg + 2 * std_dev
+
+cleaned_data = []
+outliers = []
+for item in data:
+    if item >= higher_bound or lower_bound >= item:
+        outliers.append(item)
+    else :
+        cleaned_data.append(item)
+print("정상 데이터:", cleaned_data)
+print("이상치:", outliers)
