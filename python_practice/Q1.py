@@ -3,5 +3,17 @@
 # ex) 3.1724일 경우 3을 출력
 nums = [1, 7, 2, 3, 6, 1, 2, 5, 3, 4, 8, 7]
 
+def sum(nums_list):
+    answer = 0
+    count = 0
+    for item in nums_list:
+        count += 1
+        answer += item
+        print(count, item)
+    answer = answer / count
+    return int(answer)
+
+
+print(sum(nums))
 
 # print(answer) # 4

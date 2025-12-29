@@ -14,7 +14,13 @@ books = [
 ]
 
 # 로직 작성 (sorted() 또는 sort() 함수와 lambda를 활용하세요)
-
-
+# sorted()를 이용한 풀이
+answer = sorted(books, key=lambda x: (-x['loans'], -x['year']))
+for item in answer:
+    print(item)
+# sort()를 이용한 풀이
+books.sort(key=lambda x: (-x['loans'], -x['year']))
+for item in books:
+    print(item)
 
 # print(sorted_books)

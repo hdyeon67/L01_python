@@ -11,5 +11,11 @@ users = {
 
 names = []
 # 로직 작성
+for item in users['information']:
+    names.append(item['name'])
+print(names)
+
+for item in users.get('information'):
+    names.append(item.get('name'))
 
 print(names)  # ['alex', 'june', 'peter']

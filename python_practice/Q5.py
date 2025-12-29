@@ -7,6 +7,12 @@ B = int(input())
 
 def get_absolute_value(x, y):
     # pass를 지우고 로직을 작성합니다.
-    pass
+    answer = 0
+    answer = x - y
+    if answer >= 0:
+        answer = answer
+    else:
+        answer = -answer
+    return answer
 
 print(get_absolute_value(A, B))

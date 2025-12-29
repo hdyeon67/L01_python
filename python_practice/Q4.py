@@ -10,7 +10,23 @@
 
 def check_result(scores):
     # pass를 지우고 로직을 작성합니다.
-    pass
+    result = 'PASS'
+    sum = 0
+    average = 0
+    for score in scores:
+        if(score < 40):
+            result = 'FAIL'
+            break
+        sum += score
+    average = sum / len(scores)
+        
+        
+    if result != 'FAIL' and average >= 60:
+        result = 'PASS'
+    else:
+        result = 'FAIL'
+        
+    return result
 
 # 테스트 코드
 print(f"결과 1 (PASS 예상): {check_result([80, 90, 75])}")

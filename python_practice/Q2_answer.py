@@ -10,6 +10,7 @@ print(reversed_word)
 # 풀이 2
 reversed_word = ''  # 빈 스트링을 1개 초기화하고
 for w in word:  # 반복문을 쭉 돌면서
+    print(w)
     reversed_word = w + reversed_word  # w를 앞에 두고 앞에서부터 거꾸로 붙여 나간다.
 print(reversed_word)
 

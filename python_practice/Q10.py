@@ -9,7 +9,19 @@ sales = [
 ]
 
 # 로직 작성
+total_sales = {}
+for sale in sales:
+    item = sale['item']
+    price = sale['price']
+    
+    if item not in total_sales:
+        print(f'not in {total_sales}')
+        total_sales[item] = price
+    else:
+        print(f'in {total_sales}')
+        total_sales[item] += price
 
+print(total_sales)
 
 
 # print(total_sales) # {'Apple': 2200, 'Banana': 1100, 'Grape': 2000}

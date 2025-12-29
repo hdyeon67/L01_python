@@ -4,7 +4,19 @@
 scores = [['Kim', 88], ['Lee', 95], ['Park', 92], ['Choi', 85], ['Jung', 95], ['Kang', 92]]
 
 # 로직 작성
+all_scores = []
+for score in scores:
+    all_scores.append(score[1])
+    
+unique_scores = sorted(list(set(all_scores)), reverse=True)
 
+if len(unique_scores) >= 2:
+    runner_up_students = []
+    second_score = unique_scores[1]
+    for score in scores:
+        if score[1] == second_score:
+            runner_up_students.append(score[0])
+else :
+    print('두번째로 높은 점수가 없습니다')
 
-
-# print(runner_up_students) # ['Park', 'Kang']
+print(runner_up_students) # ['Park', 'Kang']

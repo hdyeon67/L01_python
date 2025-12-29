@@ -5,7 +5,24 @@
 data = [10, 20, None, 30, 40, None, 50]
 
 # 로직 작성
+sub_none_data = []
+for item in data:
+    if item != None:
+        sub_none_data.append(item)
+        
+print(sub_none_data)
+        
+avg =int(sum(sub_none_data)/len(sub_none_data))
+print(avg)
+
+for i in range(len(data)):
+    if data[i] == None:
+        data[i] = avg
+
+print(data)
+total_sum = sum(data)
+        
 
 
 
-# print(total_sum) # 180 (평균이 30이므로 None 2개가 30으로 바뀌어 합계 180)
+print(total_sum) # 180 (평균이 30이므로 None 2개가 30으로 바뀌어 합계 180)
