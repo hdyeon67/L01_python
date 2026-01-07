@@ -50,5 +50,64 @@ for sub, cnt in subjects_cnt.items():
 
 print(f'최빈과목은 {best_sub}, 나타난 횟수는 {best_cnt}회')
 
+print('=== (3) 범위와 사분위수 범위 === ')
+# 산포도
 
+# 범위 : 최댓값 - 최소값
+# 사분위수 범위 : IQR = Q3 - Q1 (중앙값 기준 +-25% 즉, 가운데 50% 변동성만 설명)
 
+scores = [55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 37, 40, 20, 10, 90]
+print(scores)
+
+scores_range = max(scores) - min(scores)
+print(f"범위 : {scores_range}")
+
+# Q1 = 25% 위치
+# Q2 = 중앙값
+# Q3 = 75% 위치
+
+# step 1: 리스트 정렬
+scores.sort()
+print(scores)
+
+print(len(scores))
+
+print(scores[len(scores)//2]) # 중앙값 Q2
+Q1 = scores[3]
+Q3 = scores[-4]
+
+IQR = Q3 - Q1
+print(f'IQR : {IQR}') # 이상치가 존재하는 경우,
+
+print("=== (4) 분산과 표준편차의 이해 ===")
+
+A = [70, 75, 80, 85, 90]
+B = [70, 80, 80, 80, 90]
+
+A_mean = sum(A) / len(A)
+B_mean = sum(B) / len(B)
+
+print(f'A의 평균 : {A_mean}')
+print(f'B의 평균 : {B_mean}')
+print('=> 중심경향치(평균)이 똑같다!')
+print()
+
+# 산포도 
+# 분산
+A_var = 0 # 시작을 위해 정의
+
+for a in A:
+    A_var += (a - A_mean) ** 2
+
+A_var = A_var / len(A)
+A_std = A_var ** 0.5
+print(f'A의 분산 {A_var} / A의 표준편차 {round(A_std,2)}')
+
+B_var = 0
+
+for b in B:
+    B_var += (b - B_mean) ** 2
+
+B_var = B_var / len(B)
+B_std = B_var ** 0.5
+print(f'B의 분산 {B_var} / B의 표준편차 {round(B_std,2)}')
